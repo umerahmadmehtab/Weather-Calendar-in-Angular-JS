@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calender with weather</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <center>
+    <body ng-app="WeatherCalendar">
+        <h1 style="color:#0000CC; font-family:sans-serif;"> Weather Calendar By Umer Ahmad Mehtab</h1>
+        
+        <div ng-controller="calendarController" id="calendar">
+            <div class="header">
+                <i class="fa fa-angle-left" ng-click="previous()"></i>
+                <span ng-bind="currMonth"></span>
+                <i class="fa fa-angle-right" ng-click="next()"></i>
+            </div>
+            <div class="week names">
+                <span class="day">Monday</span>
+                <span class="day">Tuesday</span>
+                <span class="day">Wednesday</span>
+                <span class="day">Thursday</span>
+                <span class="day">Friday</span>
+                <span class="day">Saturday</span>
+                <span class="day">Sunday</span>
+            </div>
+            <div class="week" ng-repeat="week in weeks">
+              
+                <div ng-repeat="day in week" style="display: inline-block">
+                    <span class="day" id="day.id" ng-class="day.class" ng-bind="day.data"></span>
+                </div>
+                
+                    
+            </div>
+            
+        </div>
+        </center>
+    </body>
+</html>
